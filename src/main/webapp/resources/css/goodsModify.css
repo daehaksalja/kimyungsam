@@ -4,23 +4,29 @@
 	
 }
 
+
+
+
 #result_card img{
-	
-     max-width: 400px;
-	padding: 5px;
-	margin-top: 10px;
+	position: absolute;
+      max-width: 300px;
+       height: auto;
        display: flex;
        padding: 5px;
-       margin-top: 80px; 
+       margin-top: 20px; 
        border-radius: 20px;
-       margin-left: -70%;
+       margin-left: 60px;
    }
 .container{
 	margin-left:-13.8%;
 	margin-top: 140px; 
 	}
-
-#result_card {
+.form_section_content{
+width: 100px;	
+}
+.imgBtn{
+	margin-top:100px;
+	margin-left:80px;
 	position: absolute;
 }
 
@@ -42,22 +48,26 @@
 	display: flex;
 	justify-content: center;
 }
+
+.inputbox{
+	margin-left:46%;
+	width: 200px;
+}
 .inputTag{
 	color: white;
 	text-align:center;
 text-decoration: none;
     background-color: transparent;
-    border-color: transparent; 
 }
 textarea {
-	padding-left:40px;
+	margin-left:47.5%;
+	padding-left:0px;
 	max-height: 200px;
 	max-width: 400px;
 	position: absolute;
 	min-height:17px;
-	min-width: 178px;
+	min-width: 120px;
 	 background-color: transparent;
-	  border-color: transparent; 
 	  color: white;
 }
 .inputText1{
@@ -317,8 +327,16 @@ a{
   filter: url("data:image/svg+xml;utf8,\a<svg xmlns='http://www.w3.org/2000/svg' version='1.1'>\a<defs>\a<filter id='filter' x='-20%' y='-20%' width='140%' height='140%' filterUnits='objectBoundingBox' primitiveUnits='userSpaceOnUse' color-interpolation-filters='linearRGB'>\a<feTurbulence type='turbulence' baseFrequency='0.04 0.03' numOctaves='12' seed='27' stitchTiles='stitch' x='0%' y='0%' width='100%' height='100%' result='turbulence'/>\a<feDisplacementMap in='SourceGraphic' in2='turbulence' scale='15' xChannelSelector='R' yChannelSelector='B' x='0%' y='0%' width='100%' height='100%' result='displacementMap2'/></filter>\a</defs>\a</svg>\a#filter\a") contrast(1.3);
 } 
 
-
-
+.mainBox{
+	position: absolute;
+}
+.neon_effect .mainText{
+  color: #fff;
+	display: flex;
+	justify-content: center;
+   font-family: Comfortaa;
+  animation: neon3 1.5s ease-in-out infinite alternate;
+}
 .neon_effect .menuText{
   color: #fff;
 	

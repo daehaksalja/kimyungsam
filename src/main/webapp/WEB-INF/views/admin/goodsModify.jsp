@@ -28,31 +28,6 @@
 	z-index: -1000;
 	overflow: hidden;
 }
-
-#result_card img {
-	max-width: 400px;
-	padding: 5px;
-	margin-top: 10px;
-	border-radius: 10%;
-}
-
-#result_card {
-	position: relative;
-}
-
-.imgDeleteBtn {
-	position: absolute;
-	background-color: red;
-	color: wheat;
-	margin-top: -280px;
-	margin-left: 380px;
-	width: 30px;
-	height: 30px;
-	border-radius: 50%;
-	text-align: center;
-	border: none;
-	cursor: pointer;
-}
 </style>
 </head>
 
@@ -81,102 +56,106 @@ body {
 
 
 
-	<div class="admin_content_wrap">
-		<div class="admin_content_subject">
-			<span>상품 등록111</span>
+
+
+
+
+	<div class="container">
+
+		<div class="admin_content_main">
+			<form action="/admin/goodsModify" method="post" id="modifyForm">
+				<div class="neon_effect">
+
+					
+
+
+
+					<div class="inputText1">
+						<label class="menuText">ship 제목</label>
+					</div>
+					<div class="inputbox">
+						<input class="inputTag" name="shipName"
+							value="${goodsInfo.shipName}">
+					</div>
+
+
+
+
+
+
+
+					<div class="inputText2">
+						<label class="menuText">ship 가격</label>
+					</div>
+					<div class="inputbox">
+						<input class="inputTag" name="shipPrice"
+							value="${goodsInfo.shipPrice}">
+					</div>
+
+
+
+
+
+					<div class="inputText3">
+						<label class="menuText">ship 재고</label>
+					</div>
+					<div class="inputbox">
+						<input class="inputTag" name="shipStock"
+							value="${goodsInfo.shipStock}">
+					</div>
+
+
+
+
+
+					<div class="inputText4">
+
+						<label class="menuText">ship 소개</label>
+					</div>
+					<div class="areaBox">
+						<textarea class="inputTagLarge" name="shipIntro"
+							id="shipIntro_textarea">${goodsInfo.shipIntro}</textarea>
+					</div>
+
+
+
+
+
+
+				</div>
+
+				<div class="form_section">
+					<div class="form_section_content">
+						<input type="file" id="fileItem" name='uploadFile' class="btn">
+						<div id="uploadResult"></div>
+					</div>
+				</div>
+
+				<input type="hidden" name='shipId' value="${goodsInfo.shipId}">
+			</form>
 		</div>
 
 
 
-		<div class="container">
 
-			<div class="admin_content_main">
-				<form action="/admin/goodsModify" method="post" id="modifyForm">
-					<div class="neon_effect">
-						<div class="inputText1">
-							<label class="menuText">ship 제목</label>
-						</div>
-						<div class="inputbox">
-							<input class="inputTag" name="shipName"
-								value="${goodsInfo.shipName}">
-						</div>
-
-
-
-
-
-
-
-						<div class="inputText2">
-							<label class="menuText">ship 가격</label>
-						</div>
-						<div class="inputbox">
-							<input class="inputTag" name="shipPrice"
-								value="${goodsInfo.shipPrice}">
-						</div>
-
-
-
-
-
-						<div class="inputText3">
-							<label class="menuText">ship 재고</label>
-						</div>
-						<div class="inputbox">
-							<input class="inputTag" name="shipStock"
-								value="${goodsInfo.shipStock}">
-						</div>
-
-
-
-
-
-						<div class="inputText4">
-
-							<label class="menuText">ship 소개</label>
-						</div>
-						<div class="areaBox">
-							<textarea class="inputTagLarge" name="shipIntro"
-								id="shipIntro_textarea">${goodsInfo.shipIntro}</textarea>
-						</div>
-
-
-
-
-
-					</div>
-
-					<div class="form_section">
-						<div class="form_section_title">
-							<label>상품 이미지</label>
-						</div>
-						<div class="form_section_content">
-							<input type="file" id="fileItem" name='uploadFile'
-								style="height:30px;">
-							<div id="uploadResult"></div>
-						</div>
-					</div>
-
-					<input type="hidden" name='shipId' value="${goodsInfo.shipId}">
-				</form>
-			</div>
-
-
-
-
-			<div class="btn_section">
-				<button id="cancelBtn" class="btn">취 소</button>
-				<button id="modifyBtn" class="btn ">수 정</button>
-				<button id="deleteBtn" class="btn">삭 제</button>
-			</div>
+		<div class="btn_section">
+			<button id="cancelBtn" class="btn">취 소</button>
+			<button id="modifyBtn" class="btn ">수 정</button>
+			<button id="deleteBtn" class="btn">삭 제</button>
 		</div>
-		<form id="moveForm" action="/adminMenu/goodsManage" method="get">
-			<input type="hidden" name="pageNum" value="${cri.pageNum}"> <input
-				type="hidden" name="amount" value="${cri.amount}"> <input
-				type="hidden" name="keyword" value="${cri.keyword}"> <input
-				type="hidden" name='shipId' value="${goodsInfo.shipId}">
-		</form>
 	</div>
+
+
+	<form id="moveForm" action="/adminMenu/goodsManage" method="get">
+		<input type="hidden" name="pageNum" value="${cri.pageNum}"> <input
+			type="hidden" name="amount" value="${cri.amount}"> <input
+			type="hidden" name="keyword" value="${cri.keyword}"> <input
+			type="hidden" name='shipId' value="${goodsInfo.shipId}">
+	</form>
+
+
+
+
 
 	<script type="text/javascript">
 		$(document)
